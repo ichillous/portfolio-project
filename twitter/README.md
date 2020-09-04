@@ -1,30 +1,29 @@
 # Twitter Clone
 
 #### Description:
-➜ A website describing who I am professionaly. Site will have a contact page where users can leave a message, by updating a form via airtable.
+➜ A website that posts and deletes user input. 
 
 #### WireFrames:
-➜ https://imgur.com/a/tOeeFdY - Work Page
-➜ https://imgur.com/a/JGjIwxA - Home Page
-➜ https://imgur.com/a/RMFQrru - Services Page
-➜ https://imgur.com/a/AUq9iEX - Contact Page
-➜ https://imgur.com/a/VwX7c7k - Tablet Version
-➜ https://imgur.com/a/1TS2qHQ - Mobile Version
+➜ https://imgur.com/a/hBaFbQn - Home Mobile Page
+➜ https://imgur.com/a/gvIbpQa - Home Tablet Page
+➜ https://imgur.com/a/TB0G2HR - Home Desktop Page
+
 
 #### Component Heirarchy
-➜ https://imgur.com/a/GM6CG5q
+➜ https://imgur.com/a/Wy3DSeo
 
 #### API 
-➜ I will be using the AIRTABLE api as a message tool for users to send me their information. The page will also have a recomendation tab where users can input their recommendations.
+➜ I will be using the AIRTABLE api to post and delete tweets.
 
 #### MVP
 ##### Goals include:
-- Functional Message feature
-- Functional Recommendation feature
-- Multiple Page layout
+- Functional Post button
+- Functional Delelet button
+
 
 #### Post-MVP
 ##### Nice-to-have features:
-- Game within workpage
+- Edit button
+- Post Pictures within tweets.
 
 #### SWOT Analysis
