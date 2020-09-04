@@ -32,4 +32,4 @@
 - Retweet Button.
 
 #### SWOT Analysis
- - My weakness is in mapping through data but I will look over my previous work to get an idea of what needs to be done. My strength is in rendering data from airtable to the DOM, so I'm sure that'll be easy. 
+ - My weakness is in mapping through airtable data but I will look over my previous work to get an idea of what needs to be done. My strength is in rendering data from airtable to the DOM, so I'm sure that'll be easy. 
