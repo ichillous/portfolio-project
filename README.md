@@ -14,5 +14,17 @@
 #### Component Heirarchy
 ➜ https://imgur.com/a/GM6CG5q
 
-####API 
+#### API 
 ➜ I will be using the AIRTABLE api as a message tool for users to send me their information. The page will also have a recomendation tab where users can input their recommendations.
+
+#### MVP
+##### Goals include:
+- Functional Message feature
+- Functional Recommendation feature
+- Multiple Page layout
+
+#### Post-MVP
+##### Nice-to-have features:
+- Game within workpage
+
+#### SWOT Analysis
