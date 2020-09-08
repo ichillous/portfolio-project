@@ -5,7 +5,7 @@ import { baseURL } from '../services/constants';
 
 
 const Tweet = (props) => {
-  const { name, text } = props.tweet.fields;
+  const { name, text } = props;
   const { fetchTweets, setFetchTweets, tweet } = props;
   
   const handleTweet = async () => {
@@ -23,6 +23,7 @@ const Tweet = (props) => {
       <h5>{name}</h5>
       <p>{text}</p>
       <UpdateTweet />
+      <button onClick={handleTweet}>Delete</button>
     </div>
   );
 };
