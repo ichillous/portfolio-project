@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Home from './components/Home'
-import './App.css';
 import axios from 'axios'
+import Home from './components/Home'
 import Tweet from './components/Tweet'
 import { baseURL } from './services/constants';
+import './App.css';
 
 function App() {
   const [tweets, setTweets] = useState([]);
