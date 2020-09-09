@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const UpdateTweet = (props) => {
-  const [name, setName] = useState(props.name);
-  const [text, setText] = useState(props);
-
-  const handleSubmit = async (event) => {
+const UpdateTweet = (props) => { 
+    const [name, setName] = useState(props.name);
+    const [text, setText] = useState(props.text);
+    console.log(props)
+  
+const handleSubmit = async (event) => {
     event.preventDefault();
     const fields = {
       name,
-      text,
+      text
     };
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/twitter/${props.fields.id}`;
+    
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/twitter/${props}`;
     await axios.post(
       airtableURL,
       { fields },
@@ -24,17 +26,16 @@ const UpdateTweet = (props) => {
     );
     props.setFetchTweets(!props.fetchTweets);
   };
-
-  // (label+input)*3 with emmet
+    console.log(props.tweet)
+  // (label+input)*3 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="title">User Name:</label>
+      <label htmlFor="name">User Name:</label>
       <input
-        name="title"
+        name="name"
         type="text"
         value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
+        onChange={(event) => setName(event.target.value)}/>
       <br />
       <label htmlFor="text">Text:</label>
       <textarea
@@ -42,8 +43,8 @@ const UpdateTweet = (props) => {
         type="text"
         value={text}
         onChange={(event) => setText(event.target.value)}
-      />
-      <button type="submit">tweet</button>
+      > Type Here</textarea>
+      <button type="submit">Edit</button>
     </form>
   );
 };
