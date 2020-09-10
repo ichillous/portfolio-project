@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import UpdateTweet from "./UpdateTweet";
 import { baseURL } from "../services/constants";
@@ -19,10 +19,10 @@ const Tweet = (props) => {
   };
   console.log(tweets)
   return (
-    <div>
+    <div id="tweet">
         <h5>{name}</h5>
         <p>{text}</p> 
-        
+        <UpdateTweet/>
     </div>
   );
 };

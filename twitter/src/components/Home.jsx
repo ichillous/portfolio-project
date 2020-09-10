@@ -3,6 +3,7 @@ import Tweet from "./Tweet";
 import { baseURL } from "../services/constants";
 import axios from "axios";
 import CreateTweet from "./CreateTweet";
+import SideBar from "./SideBar";
 
 const Home = (props) => {
   const [tweets, setTweets] = useState([]);
@@ -22,9 +23,11 @@ const Home = (props) => {
   }, [fetchTweets]);
 
   return (
-    <div id="home">
+    <div>
       <h4>Home</h4>
-      <CreateTweet />
+      <SideBar/>
+      <div id="home">
+           <CreateTweet />
       {
       tweets.map((tweet) => (
         <Tweet
@@ -33,7 +36,9 @@ const Home = (props) => {
           setFetchTweets={setFetchTweets}
           fetchTweets={fetchTweets}
         />
+        
       ))}
+      </div>
     </div>
   );
 };

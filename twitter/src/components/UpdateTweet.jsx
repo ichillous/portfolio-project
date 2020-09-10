@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import { Component } from "react";
 
 class UpdateTweet extends Component {
@@ -11,10 +10,18 @@ class UpdateTweet extends Component {
     this.name = "";
     this.text = "";
   }
+  toggle = (updateTweet) => {
+    const e = document.getElementById(updateTweet);
+    if(e.style.display == 'block')
+       e.style.display = 'none';
+    else
+       e.style.display = 'block';
+  }
   render() {
     const { name, text } = this.props;
     return (
-      <form>
+    <div>
+        <form>
         <p>Name :</p>
         {this.state.editing ? (
           <span className="name">{name}</span>
@@ -49,6 +56,8 @@ class UpdateTweet extends Component {
           </button>
         </div>
       </form>
+    </div>
+      
     );
   }
 }

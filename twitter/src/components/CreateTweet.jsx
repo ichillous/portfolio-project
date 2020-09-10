@@ -39,6 +39,7 @@ const CreateTweet = (props) => {
       <input name="text" type="text" value={text}
       onChange={(event) => setText(event.target.value)}/>
       <button type="submit">Tweet</button>
+      
     </form>
   );
 };
