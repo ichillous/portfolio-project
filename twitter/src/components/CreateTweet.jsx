@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CreateTweet = (props) => {
-  const [name, setName] = useState('');
-  const [text, setText] = useState('');
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const fields = {
-      name, //When you make a request there must be keys
+      name,
       text,
     };
 
@@ -24,22 +24,26 @@ const CreateTweet = (props) => {
       }
     );
     props.setFetchTweets(!props.fetchTweets);
-    setName('');
-    setText('');
+    setName("");
+    setText("");
   };
   return (
     <form id="formsubmit" onSubmit={handleSubmit}>
       <label htmlFor="name">Name :</label>
-      <input 
-      name="name" 
-      type="text" 
-      value={name} 
-      onChange={(event)=> setName(event.target.value)}></input>
+      <input
+        name="name"
+        type="text"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      ></input>
       <label htmlFor="text">Type Here</label>
-      <input name="text" type="text" value={text}
-      onChange={(event) => setText(event.target.value)}/>
+      <input
+        name="text"
+        type="text"
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+      />
       <button type="submit">Tweet</button>
-      
     </form>
   );
 };

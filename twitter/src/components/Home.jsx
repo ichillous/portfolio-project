@@ -27,17 +27,17 @@ const Home = (props) => {
       <h4>Home</h4>
       <SideBar/>
       <div id="home">
-           <CreateTweet />
-      {
-      tweets.map((tweet) => (
-        <Tweet
-          tweet={tweet}
-          key={tweet.id}
-          setFetchTweets={setFetchTweets}
-          fetchTweets={fetchTweets}
-        />
-        
-      ))}
+        <CreateTweet />
+        {
+        tweets.map((tweet) => (
+            <Tweet
+            tweet={tweet}
+            key={tweet.id}
+            setFetchTweets={setFetchTweets}
+            fetchTweets={fetchTweets}
+            />
+            
+        ))}
       </div>
     </div>
   );

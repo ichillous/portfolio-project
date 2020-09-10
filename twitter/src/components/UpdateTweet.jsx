@@ -1,65 +1,49 @@
-import React from "react";
-import { Component } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-class UpdateTweet extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editing: false,
+const UpdateTweet = (props) => {
+    console.log(props)
+    const [name, setName] = useState(props.tweet.fields.name);
+    const [text, setText] = useState(props.tweet.fields.text);
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const fields = {
+        name,
+        text,
+      };
+      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/twitter/${props.tweet.id}`;
+      await axios.put(
+        airtableURL,
+        { fields },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      props.setFetchTweets(!props.fetchTweets);
+
     };
-    this.name = "";
-    this.text = "";
-  }
-  toggle = (updateTweet) => {
-    const e = document.getElementById(updateTweet);
-    if(e.style.display == 'block')
-       e.style.display = 'none';
-    else
-       e.style.display = 'block';
-  }
-  render() {
-    const { name, text } = this.props;
     return (
-    <div>
-        <form>
-        <p>Name :</p>
-        {this.state.editing ? (
-          <span className="name">{name}</span>
-        ) : (
-          <input
-            type="text"
-            defaultValue={name}
-            ref={(node) => {
-              this.name = node;
-            }}
-          />
-        )}
-        <p>Text :</p>
-        {this.state.editing ? (
-          <span className="text">{text}</span>
-        ) : (
-          <input
-            type="text"
-            defaultValue={text}
-            ref={(node) => {
-              this.text = node;
-            }}
-          />
-        )}
-        <div>
-          <button
-            onClick={() => {
-              this.setState({ editing: true });
-            }}
-          >
-            Edit
-          </button>
-        </div>
+      <form id="formsubmit" onSubmit={handleSubmit}>
+        <label htmlFor="name">Name :</label>
+        <input
+          name="name"
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        ></input>
+        <label htmlFor="text">Type Here</label>
+        <input
+          name="text"
+          type="text"
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+        />
+        <button type="submit">Tweet</button>
       </form>
-    </div>
-      
     );
-  }
-}
-
+  };
 export default UpdateTweet;

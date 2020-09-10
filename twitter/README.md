@@ -18,11 +18,10 @@
 #### MVP
 ##### Goals include:
 - Functional Post button.
-- Functional Delelet button.
+- Functional Delete button.
 - Create three flexpoints using CSS.
 - Use React Router to view individual tweets.
 - Create twitter replica with superior UI. 
-
 
 #### Post-MVP
 ##### Nice-to-have features:
