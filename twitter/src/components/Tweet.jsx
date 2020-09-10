@@ -22,6 +22,7 @@ const Tweet = (props) => {
     <div>
         <h5>{name}</h5>
         <p>{text}</p> 
+        
     </div>
   );
 };
