@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Route, Switch, Link } from "react-router-dom";
+import UpdateTweet from "./UpdateTweet"
 import Tweet from "./Tweet";
 import { baseURL } from "../services/constants";
 import axios from "axios";
@@ -17,6 +19,7 @@ const Home = (props) => {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
+      console.log(response.data.records)
       setTweets(response.data.records);
     };
     getTweets();
@@ -25,6 +28,7 @@ const Home = (props) => {
   return (
     <div>
       <h4>Home</h4>
+      <Link to="/about"> <h5>About</h5></Link>
       <SideBar/>
       <div id="home">
         <CreateTweet />
@@ -38,6 +42,11 @@ const Home = (props) => {
             />
             
         ))}
+        <Switch>
+            <Route path="/update">
+             <UpdateTweet tweet={tweets}/>
+            </Route>
+      </Switch>
       </div>
     </div>
   );

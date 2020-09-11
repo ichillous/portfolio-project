@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const UpdateTweet = (props) => {
-    console.log(props)
+   console.log(props.tweet)
     const [name, setName] = useState(props.tweet.fields.name);
     const [text, setText] = useState(props.tweet.fields.text);
-  
+
     const handleSubmit = async (event) => {
       event.preventDefault();
       const fields = {
@@ -24,7 +24,6 @@ const UpdateTweet = (props) => {
         }
       );
       props.setFetchTweets(!props.fetchTweets);
-
     };
     return (
       <form id="formsubmit" onSubmit={handleSubmit}>
@@ -42,7 +41,7 @@ const UpdateTweet = (props) => {
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
-        <button type="submit">Tweet</button>
+        <button id="buttonsubmit" type="submit">edit</button>
       </form>
     );
   };

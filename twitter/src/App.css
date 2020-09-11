@@ -3,6 +3,7 @@
 }
 
 body {
+  color: white;
   background: #243447;
 }
 
@@ -11,7 +12,6 @@ body {
   float: inline-end;
   border-collapse: separate;
   border-spacing: 15px 50px;
-  
 }
 
 #sidebar {
@@ -24,9 +24,23 @@ body {
 #tweet {
   color:white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#buttonsubmit{
+  color: white;
+  background: white;
+}
+@media only screen and (max-width: 850px) {
+  #formsubmit {
+    justify-items: center;
+    max-width: 200px;
+    display: grid;
+  }
+  #tweet {
+    justify-items: center;
+    display: grid;
+    max-width: 200px;
+  }
+  #sidebar {
+    display: inherit;
+    margin: 1em;
   }
 }
