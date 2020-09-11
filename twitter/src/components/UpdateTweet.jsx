@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const UpdateTweet = (props) => {
-   console.log(props.tweet)
+   
     const [name, setName] = useState(props.tweet.fields.name);
     const [text, setText] = useState(props.tweet.fields.text);
 
